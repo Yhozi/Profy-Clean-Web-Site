@@ -288,12 +288,7 @@ footer {
         margin-top: 80px;
     }
     .opening-content::after {
-        content: "↓ Posaljite nam poruku ↓"; /* Add the text with arrows */
-        display: block; /* Ensure it appears as a block below the content */
-        text-align: center; /* Center the text */
-        font-size: 20px; /* Increase font size for emphasis */
-        font-weight: bold; /* Make the text bold */
-        color: #ffffff; /* Set the text color */
+        content: ""; 
         margin-top: 20px; /* Add spacing above the text */
     }
 }
@@ -773,6 +768,14 @@ footer {
     .creds div {
         margin: 0 auto;
         padding: 10px;
+    }
+
+
+}
+
+@media (max-width: 1500px) {
+    .video {
+        margin-top: 120px; /* Add spacing between the navbar and the video */
     }
 }
 
