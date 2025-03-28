@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ovo je osnovni HTML šablon za sajt na srpskom jeziku.">
+    <meta name="author" content="Vaše ime">
+    <title>Profy Clean</title>
+    <link rel="icon" type="image/x-icon" href="tab-logo/shines.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    
+</head>
+<body>
+    <section class="contact-bar">
+        <div>
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+18475555555">+381-633-006-45 </a>
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:someone@example.com">office@profyclean.rs
+            </a>
+        </div>
+    </section>
+    <nav>
+        <img src="emblem/logotest.png" alt="Logo">
+        
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    
+        <div class="nav-links">
+            <a href="main.html">POČETNA</a>
+            <a href="#partners">PARTNERI</a>
+            <a href="#certifaction">SERTIFIKATI</a>
+            <a href="usluge.html">USLUGE</a>
+            <a href="galerija.html">GALERIJA</a>
+            <a href="team.html">NAŠ TIM</a>
+            <a href="#contact"><button>KONTAKT</button></a>
+        </div>
+    </nav>
+    
+    <header>
+    </header>
+
+    <main>
+        
+        <video class="video" autoplay loop muted>
+            <source src="videos/videoclean.MOV" type="video/mp4" >
+          </video>
+          <section class="opening">
+            <div class="opening-content">
+                <h1><em>Profesionalna kompanija za čišćenje koja održava vaš prostor besprekorno čistim</em></h1>
+<p>Osiguravamo vrhunsku čistoću vaših objekata uz fleksibilne, pouzdane, sertifikovane i sigurne usluge.</p>
+<ul>
+    <li>Porodična firma, bez franšiznog poslovanja</li>
+    <li>Dostupni 24/7</li>
+    <li>Potpuno prilagođeni planovi i raspored čišćenja</li>
+    <li>Podrška za poslovanje u svim industrijama</li>
+    <li>Nas cilj je izgradnja saradnje sa novim klijentima na temelju poverenja</li>
+</ul>
+
+            </div>
+            <div class="contact-form">
+                <h2>Kontaktirajte nas</h2>
+                <form action="#" method="post">
+                    <label for="name">Ime:</label>
+                    <input type="text" id="name" name="name" placeholder="Vaše ime" required>
+                    
+                    <label for="company">Naziv kompanije:</label>
+                    <input type="text" id="company" name="company" placeholder="Naziv vaše kompanije" required>
+                    
+                    <label for="phone">Telefon:</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Vaš broj telefona" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="Vaš email" required>
+                    
+                    <label for="message">Dodatne informacije:</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Vaša poruka" required></textarea>
+                    
+                    <button type="submit">Pošalji</button>
+                </form>
+            </div>
+        </section>
+        <section class="pagetwo">
+        <section id="partners">
+        <h1 class="header-text">NASI PARTNERI</h1>
+        <div class="marquee marquee--9">
+            <img class="marquee__item" src="logos/logo-arena-neg.png" alt="">
+            <img class="marquee__item" src="logos/logo-dis.png" alt="">
+            <img class="marquee__item" src="logos/logo-dm.png" alt="">
+            <img class="marquee__item" src="logos/logo-komora.png"  alt="">
+            <img class="marquee__item" src="logos/logo-maxi.png"  alt="">
+            <img class="marquee__item" src="logos/logo-privredna.png" alt="">
+            <img class="marquee__item" src="logos/logo-temp.png"  alt="">
+            <img class="marquee__item" src="logos/logo-unicredit.png"  alt="">
+            <img class="marquee__item" src="logos/logo-univer.png" alt="">
+          </div>
+          
+        </section>
+          <section id="certifaction" class="creds">
+            <h1 class="header-text">STANDARDI</h1>
+<div>
+            <p>Profy Clean je specijalizovana za pružanje vrhunskih usluga čišćenja za poslovne i stambene prostore, uz strogo pridržavanje najviših standarda kvaliteta, ekološke odgovornosti i poslovne saradnje.</p>
+        
+        <h2>Poslujemo u skladu sa sertifikatima:</h2>
+        <img src="iso/iso14001t.png">
+        <img src="iso/iso9001t.png">
+        <img src="iso/iso44001t.png">
+        
+        
+        <p class="footer">Naša posvećenost ovim standardima garantuje besprekornu higijenu i maksimalno zadovoljstvo naših klijenata.</p></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Vaše ime. Sva prava zadržana.</p>
+        <a class="atribute" href="https://www.vecteezy.com/free-videos/cleaning">Cleaning Stock Videos by Vecteezy</a><br>
+        <a class="atribute" href="https://www.flaticon.com/free-icons/shine" title="shine icons">Shine icons created by Freepik - Flaticon</a><br>
+        <a class="atribute" href="http://www.freepik.com">ISO Badges designed by Freepik</a>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

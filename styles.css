@@ -1,0 +1,745 @@
+/* === GLOBAL STYLES === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", sans-serif;
+    
+}
+
+body {
+    background-color: #5B676D; 
+    min-height:100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* === CONTACT BAR === */
+.contact-bar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #1F262A;
+    padding: 15px 15px;/* Ensures it stays on top */
+}
+
+.contact-bar a,
+.contact-bar i {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.contact-bar a:first-of-type {
+    margin-right: 20px;
+}
+
+.contact-bar div {
+    display: flex; /* Use flexbox for proper alignment */
+    flex-wrap: wrap; /* Allow wrapping when the width is small */
+    align-items: center; /* Vertically align items */
+    gap: 10px; /* Add spacing between the icon and text */
+}
+
+.contact-bar i {
+    margin-right: 5px; /* Add spacing between the icon and the text */
+    font-size: 1rem; /* Adjust icon size if needed */
+}
+
+.contact-bar a {
+    text-decoration: none; /* Remove underline from links */
+    color: white; /* Ensure consistent text color */
+    font-size: 1rem; /* Adjust font size */
+    word-break: break-word; /* Allow breaking long email addresses */
+}
+
+/* === NAVBAR DEFAULT STYLES === */
+nav {
+    width: 100%; 
+    background-color: #2A3439;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 50px; /* Ensures it stays below the contact bar but above other content */
+}
+
+nav img {
+    width: 90px;
+    position: absolute;
+    left: 50px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.nav-links a, .nav-links button {
+    padding: 9px 25px;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: large;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: cornflowerblue;
+}
+
+/* === BUTTON STYLES === */
+.nav-links button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 136, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: larger;
+}
+
+.nav-links button:hover {
+    background-color: rgba(0, 136, 136, 0.8);
+}
+
+/* === HAMBURGER MENU STYLES === */
+.menu-icon {
+    display: none; /* Hidden by default */
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+}
+
+
+
+/* === RESPONSIVE DESIGN: HIDE NAV LINKS AND SHOW MENU ICON BELOW 1000px === */
+@media (max-width: 1300px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 110px; /* Pomeranje odmah ispod navbar-a */
+        left: 0;
+        right: 0;
+        background-color: #2A3439;
+        width: 100%;
+        text-align: center;
+        padding: 20px 0;
+        z-index: 1000; /* Osigurava da je iznad drugih elemenata */
+    }
+
+    .nav-links a, .nav-links button {
+        padding: 15px;
+        width: 100%;
+    }
+
+    .menu-icon {
+        display: block; /* Show menu icon */
+        z-index: 1100; /* Da ostane iznad menija */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+
+    nav {
+        height: auto; /* Adjust height dynamically */
+        display: flex;
+        position: relative;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        justify-content: center; /* Center items vertically */
+        padding: 10px 20px; /* Adjust padding for smaller viewports */
+    }
+
+    nav img {
+        width: 90px; /* Adjust logo size for smaller viewports */
+        position: static; /* Remove absolute positioning */
+        transform: none; /* Remove transform to center naturally */
+        margin: 0 auto; /* Center the image */
+    }
+
+    
+    
+}
+
+.video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ensures the video covers the entire area without distortion */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Places it behind other content */
+    filter: brightness(50%); /* Darkens the video */
+}
+
+footer {
+    background-color: #2A3439;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px; /* Add spacing above the footer */
+    position: relative; /* Ensure the footer doesn't overlap content */
+    z-index: 1; /* Ensure it stays above the background but below content */
+}
+
+.opening {
+    display: flex; /* Create a two-column layout */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    gap: 40px; /* Add more spacing between the columns */
+    color: white;
+    margin: 40px auto; /* Center the section horizontally */
+    padding: 20px 0; /* Add vertical padding */
+    max-width: 1200px; /* Limit the overall width of the section */
+    justify-content: space-between; /* Add space between the columns */
+}
+
+.opening-content,
+.contact-form {
+    flex: 1; /* Take up equal space */
+    min-width: 300px; /* Ensure it doesn't shrink too much */
+    max-width: 600px; /* Limit the width of each column */
+    padding: 20px; /* Add padding inside each column */
+    /*border: 1px solid rgba(255, 255, 255, 0.2);  Add a subtle border */
+    border-radius: 10px; /* Round the corners */
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  Add a light shadow for depth */
+    /*background-color: rgba(91, 103, 109, 0.5);  Remove the background color */
+    margin: 0 10px; /* Set equal left and right margins */
+}
+
+
+.contact-form h2 {
+    margin-bottom: 15px;
+    font-family: "Georgia", serif;
+    font-size: 1.8rem;
+    text-align: center; /* Center the heading */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Add spacing between form elements */
+}
+
+.contact-form label {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: rgba(0, 136, 136, 1);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: rgba(0, 136, 136, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .opening {
+        flex-direction: column; /* Stack columns vertically on smaller screens */
+        gap: 20px; /* Reduce the gap for smaller screens */
+    }
+
+    .opening-content,
+    .contact-form {
+        max-width: 100%; /* Allow full width for smaller screens */
+    }
+
+    .contact-form{
+        margin-top: 80px;
+    }
+    .opening-content::after {
+        content: "↓ Posaljite nam poruku ↓"; /* Add the text with arrows */
+        display: block; /* Ensure it appears as a block below the content */
+        text-align: center; /* Center the text */
+        font-size: 20px; /* Increase font size for emphasis */
+        font-weight: bold; /* Make the text bold */
+        color: #ffffff; /* Set the text color */
+        margin-top: 20px; /* Add spacing above the text */
+    }
+}
+
+.opening-content h1 {
+    text-align: center;
+    ;
+}
+
+.opening-content p {
+    font-size: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.opening-content li {
+    font-size: 18px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-left: 35px;
+}
+
+.marquee {
+    display: flex;
+    block-size: var(--marquee-item-height);
+    margin-block: var(--marquee-item-height);
+    position: relative;
+    overflow-x: hidden;
+    min-height: 220px; 
+    mask-image: linear-gradient(
+      to right,
+      hsl(0 0% 0% / 0),
+      hsl(0 0% 0% / 1) 20%,
+      hsl(0 0% 0% / 1) 80%,
+      hsl(0 0% 0% / 0)
+    );
+    margin-bottom: 50px;
+    margin-top: 20px;
+  }
+  
+  .marquee--9 {
+    --marquee-item-width: 360px; /* Width of each item */
+    --marquee-item-height: 200px; /* Height of each item */
+    --marquee-duration: 36s; /* Adjust duration for smooth animation */
+    --marquee-items: 9;
+}
+.marquee--9 {
+    display: flex; /* Use Flexbox for horizontal alignment */
+    gap: 20px; /* Add even spacing between images */
+    overflow: hidden; /* Prevent overflow */
+    align-items: center; /* Center images vertically */
+    justify-content: center; /* Center the entire marquee content */
+}
+
+.marquee--9 .marquee__item {
+    width: auto; /* Allow width to adjust automatically */
+    height: 200px; /* Set a fixed height */
+    object-fit: contain; /* Ensure the image fits within the height while maintaining aspect ratio */
+    flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+  
+  .marquee__item {
+    --marquee-item-offset: max(
+      calc(var(--marquee-item-width) * var(--marquee-items)),
+      calc(100% + var(--marquee-item-width))
+    );
+    --marquee-delay: calc(var(--marquee-duration) / var(--marquee-items) * (var(--marquee-items) - var(--marquee-item-index)) * -1);
+    position: absolute;
+    inset-inline-start: var(--marquee-item-offset);
+    transform: translateX(-50%);
+    animation: go linear var(--marquee-duration) var(--marquee-delay, 0s) infinite;
+  }
+  
+  .marquee__item:nth-child(4n) {
+    border-top-right-radius: 1rem;
+  }
+  
+  .marquee__item:nth-child(4n + 1) {
+    border-bottom-right-radius: 1rem;
+  }
+  
+  .marquee__item:nth-child(4n + 2) {
+    border-bottom-left-radius: 1rem;
+  }
+  
+  .marquee__item:nth-child(4n + 3) {
+    border-top-left-radius: 1rem;
+  }
+  
+  .marquee--9 .marquee__item:nth-of-type(1) {
+    --marquee-item-index: 1;
+}
+
+.marquee--9 .marquee__item:nth-of-type(2) {
+    --marquee-item-index: 2;
+}
+
+.marquee--9 .marquee__item:nth-of-type(3) {
+    --marquee-item-index: 3;
+}
+
+.marquee--9 .marquee__item:nth-of-type(4) {
+    --marquee-item-index: 4;
+}
+
+.marquee--9 .marquee__item:nth-of-type(5) {
+    --marquee-item-index: 5;
+}
+
+.marquee--9 .marquee__item:nth-of-type(6) {
+    --marquee-item-index: 6;
+}
+
+.marquee--9 .marquee__item:nth-of-type(7) {
+    --marquee-item-index: 7;
+}
+
+.marquee--9 .marquee__item:nth-of-type(8) {
+    --marquee-item-index: 8;
+}
+
+.marquee--9 .marquee__item:nth-of-type(9) {
+    --marquee-item-index: 9;
+}
+
+  
+  
+  @keyframes go {
+    to {  
+      inset-inline-start: calc(var(--marquee-item-width) * -1);
+    }
+  }
+  
+
+  .header-text {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 48px; /* Increase font size for emphasis */
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Use a color that stands out */
+    text-transform: uppercase; /* Make the text uppercase for importance */
+    letter-spacing: 2px; /* Add letter spacing for a modern look */
+    position: relative; /* For adding decorative underline */
+}
+
+.header-text::after {
+    content: "";
+    display: block;
+    width: 450px; /* Adjust width of the underline */
+    height: 4px; /* Thickness of the underline */
+    background-color: #008888; /* Match the text color */
+    margin: 10px auto 0; /* Center the underline and add spacing */
+    border-radius: 2px; /* Round the edges of the underline */
+}
+
+.creds {
+    display: flex; /* Use Flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Add spacing between the <h1> and <p> */
+    margin-top: 20px; /* Add spacing above the section */
+    padding-bottom: 50px; /* Add padding to prevent overlap with the footer */
+}
+
+.creds h1 {
+    text-align: center; /* Center the heading */
+    font-size: 2rem; /* Adjust font size for emphasis */
+    color: white; /* Ensure the text color matches the design */
+    margin: 0; /* Remove default margins */
+}
+
+.creds div {
+    text-align: center; /* Center the text */
+    font-size: 1.2rem; /* Adjust font size for readability */
+    line-height: 1.8; /* Improve line spacing */
+    color: white; /* Use a neutral color for better readability */
+    max-width: 800px; /* Limit the width for better readability */
+    padding: 10px; /* Add padding for a cleaner look */
+    background-color: rgba(42, 52, 57, 0.6); /* Add a subtle background */
+    border-radius: 8px; /* Round the corners for a modern look */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a light shadow for depth */
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.creds ul {
+    text-align: left;
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+.creds img {
+    width: 150px;
+    height: 150px;
+}
+
+.creds-images {
+    display: flex; /* Use Flexbox for horizontal alignment */
+    justify-content: center; /* Center the images horizontally */
+    gap: 20px; /* Add spacing between the images */
+    flex-wrap: wrap; /* Allow wrapping if there are too many images */
+    margin-top: 20px; /* Add spacing above the images */    
+}
+
+.highlight {   
+    color: #ade4e4; /* Use the brand color for emphasis */
+    font-weight: bold; /* Make the text bold for emphasis */
+    font-size: 1.5rem; /* Adjust font size for readability */
+}
+
+@media (max-height: 760px) {
+    .marquee--9 {
+        flex-wrap: wrap; /* Allow images to wrap to the next line */
+        justify-content: center; /* Center the images horizontally */
+        gap: 20px; /* Add at least 20px spacing between images */
+        height: auto; /* Allow the marquee to adjust its height */
+    }
+
+    .marquee--9 .marquee__item {
+        width: auto; /* Maintain aspect ratio */
+        height: 80px; /* Adjust height for smaller screens */
+        margin: 10px; /* Add spacing around each image */
+        object-fit: contain; /* Ensure the image fits within the height */
+    }
+}
+
+.pagetwo {
+    min-height: 100vh; /* Use min-height instead of height */
+    height: auto; /* Allow the height to adjust dynamically */
+}
+
+.atribute {
+    color:gray;
+}
+.first-header{
+    margin-top: 20px;
+}
+
+
+.second-header{
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Omogućava prelamanje na manjim ekranima */
+    margin: 50px auto; /* Centriranje kontejnera horizontalno */
+    max-width: 1600px; /* Ograničava maksimalnu širinu */
+    padding: 20px; /* Dodaje unutrašnje margine */
+}
+
+.container div {
+    width: 300px; /* Fiksna širina za svaku karticu */
+    height: 250px; /* Dinamička visina */
+    border-radius: 10px; /* Zaobljeni uglovi */
+    background-color: #ffffff; /* Bela pozadina */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Suptilna senka za dubinu */
+    padding: 20px; /* Unutrašnje margine */
+    text-align: center; /* Centriranje teksta */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Efekti na hover */
+    overflow: hidden; /* Ensures content outside the div is hidden */
+}
+
+.container div:hover {
+    transform: translateY(-10px); /* Blago podizanje kartice na hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Pojačana senka na hover */
+}
+
+.container h2 {
+    font-size: 1.5rem; /* Veći font za naslove */
+    color: #008888; /* Istaknuta boja za naslove */
+    margin-bottom: 10px; /* Razmak ispod naslova */
+    margin-top: 0px; /* Initial margin */
+    transition: margin-top 0.5s ease; /* Smooth transition for margin-top */
+}
+
+.container img {
+    transition: transform 0.5s ease, opacity 0.5s ease; /* Smooth transition for both transform and opacity */
+    margin-top: 20px; /* Initial margin */
+}
+
+.container p {
+    font-size: 1rem; /* Čitljiv font za opise */
+    color: #5B676D; /* Neutralna boja za tekst */
+    line-height: 1.6; /* Poboljšana čitljivost sa razmakom između redova */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.container div:hover h2 {
+    margin-top: -70px; /* Target state when hovering */
+}
+
+.container div:hover img {
+    transform: translateY(-100px); /* Move the image up */
+}
+
+.container div:hover p {
+    opacity: 1; /* Target state when hovering */
+}
+
+* {
+    font-family: Nunito, sans-serif;
+  }
+  
+  .text-blk {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    line-height: 25px;
+  }
+  
+  .responsive-cell-block {
+    min-height: 75px;
+  }
+  
+  .responsive-container-block {
+    min-height: 75px;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 0px;
+    margin-right: auto;
+    margin-bottom: 0px;
+    margin-left: auto;
+    justify-content: space-evenly;
+  }
+  
+  .outer-container {
+    padding-top: 10px;
+    padding-right: 50px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    background-color: #5B676D;
+  }
+  
+  .inner-container {
+    max-width: 1320px;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-bottom: 50px;
+    margin-left: auto;
+  }
+  
+  .section-head-text {
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 48px;
+    color: rgb(0, 135, 177);
+    margin: 0 0 10px 0;
+  }
+  
+  .section-subhead-text {
+    font-size: 25px;
+    color: white;
+    line-height: 35px;
+    max-width: 470px;
+    text-align: center;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 60px;
+    margin-left: 0px;
+  }
+  
+  .img-wrapper {
+    width: 100%;
+  }
+  
+  .team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-media-links {
+    width: 125px;
+    display: flex;
+    justify-content: space-between;
+    transform: scale(1.5);
+  }
+  
+  .name {
+    font-size: 25px;
+    font-weight: 700;
+    color: white;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 5px;
+    margin-left: 0px;
+  }
+  
+  .position {
+    font-size: 25px;
+    font-weight: 700;
+    color: rgb(0, 159, 207);
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-bottom: 50px;
+    margin-left: 0px;
+  }
+  
+  .team-img {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .team-card-container {
+    width: 280px;
+    margin: 0 0 40px 0;
+  }
+  
+  @media (max-width: 500px) {
+    .outer-container {
+      padding: 10px 20px 10px 20px;
+    }
+  
+    .section-head-text {
+      text-align: center;
+    }
+  }
+
+  .gallery {
+    column-count: 3; /* 3 images per row */
+    column-gap: 20px; /* Maintain 20px gap */
+    width: 1200px; /* Fixed width */
+    margin: 0 auto; /* Center the gallery */
+    padding-bottom: 50px;
+    
+}
+
+.gallery img {
+    width: 100%; /* Make images fit their column */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add vertical spacing */
+    display: block; /* Prevent inline spacing issues */
+}
+.third-header {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+
+  
