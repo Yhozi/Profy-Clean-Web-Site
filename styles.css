@@ -7,12 +7,19 @@
     
 }
 
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
 body {
     background-color: #5B676D; 
     min-height:100vh;
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
+    width: 100%;
+    
 }
 
 /* === CONTACT BAR === */
@@ -741,5 +748,32 @@ footer {
     margin-bottom: 50px;
 }
 
+@media (max-width: 460px) {
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
 
-  
+    .contact-bar {
+        flex-wrap: wrap;
+        padding: 10px;
+    }
+
+    .gallery {
+        column-count: 1;
+        column-gap: 10px;
+    }
+
+    .opening-content,
+    .contact-form {
+        max-width: 100%;
+        margin: 0;
+    }
+
+    .creds div {
+        margin: 0 auto;
+        padding: 10px;
+    }
+}
+
+
