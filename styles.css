@@ -439,7 +439,7 @@ footer {
 .header-text::after {
     content: "";
     display: block;
-    width: 80%; /* Adjust width of the underline */
+    width:400px; /* Adjust width of the underline */ 
     height: 4px; /* Thickness of the underline */
     background-color: #008888; /* Match the text color */
     margin: 10px auto 0; /* Center the underline and add spacing */
