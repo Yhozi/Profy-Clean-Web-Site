@@ -192,6 +192,7 @@ nav a {
     left: 0;
     z-index: -1; /* Places it behind other content */
     filter: brightness(50%); /* Darkens the video */
+    pointer-events: none;
 }
 
 footer {
@@ -782,3 +783,16 @@ footer {
 }
 
 
+@media screen and (max-width: 400px) {
+    .contact-bar a , .contact-bar {
+        font-size: 0.9rem;
+    }
+    
+}
+
+@media screen and (max-width: 360px) {
+    .contact-bar a , .contact-bar {
+        font-size: 0.7rem;
+    }
+    
+}
