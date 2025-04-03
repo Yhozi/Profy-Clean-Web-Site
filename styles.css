@@ -726,18 +726,17 @@ footer {
   .gallery {
     column-count: 3; /* 3 images per row */
     column-gap: 20px; /* Maintain 20px gap */
-    width: 1200px; /* Fixed width */
+    width: 90%; /* Fixed width */
     margin: 0 auto; /* Center the gallery */
     padding-bottom: 50px;
     
 }
 
-.gallery {
-    column-count: 3; /* 3 images per row */
-    column-gap: 20px; /* Maintain 20px gap */
-    width: 90%; /* Fixed width */
-    margin: 0 auto; /* Center the gallery */
-    padding-bottom: 50px;
+.gallery img {
+    width: 100%; /* Make images fit their column */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Add vertical spacing */
+    display: block; /* Prevent inline spacing issues */
 }
 .third-header {
     margin-top: 50px;
@@ -745,6 +744,8 @@ footer {
 }
 
 @media (max-width: 460px) {
+    
+
     .nav-links {
         flex-direction: column;
         width: 100%;
