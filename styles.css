@@ -439,7 +439,7 @@ footer {
 .header-text::after {
     content: "";
     display: block;
-    width: 450px; /* Adjust width of the underline */
+    width: 80%; /* Adjust width of the underline */
     height: 4px; /* Thickness of the underline */
     background-color: #008888; /* Match the text color */
     margin: 10px auto 0; /* Center the underline and add spacing */
@@ -533,6 +533,7 @@ footer {
 .second-header{
     margin-top: -20px;
     margin-bottom: 30px;
+    width:80%;
 }
 
 
@@ -619,17 +620,17 @@ footer {
     display: flex;
     flex-wrap: wrap;
     margin-top: 0px;
-    margin-right: auto;
+    margin-right: 0px;
     margin-bottom: 0px;
-    margin-left: auto;
+    margin-left: 0px;
     justify-content: space-evenly;
   }
   
   .outer-container {
     padding-top: 10px;
-    padding-right: 50px;
+    padding-right: 0px;
     padding-bottom: 10px;
-    padding-left: 50px;
+    padding-left: 0px;
     background-color: #5B676D;
   }
   
@@ -795,4 +796,24 @@ footer {
         font-size: 0.7rem;
     }
     
+}
+
+.team-header {
+    font-weight: bold; /* Make the text bold */
+    color: white; /* Use a color that stands out */
+    text-transform: uppercase; /* Make the text uppercase for importance */
+    letter-spacing: 2px; 
+    text-align: center;
+    margin-top: 20px; /* Add spacing above the section */
+    font-size: 48px; /* Increase font size for emphasis */
+}
+
+.team-header::after {
+    content: "";
+    display: block;
+    width: 300px; /* Adjust width of the underline */
+    height: 4px; /* Thickness of the underline */
+    background-color: #008888; /* Match the text color */
+    margin: 10px auto 0; /* Center the underline and add spacing */
+    border-radius: 2px; /* Round the edges of the underline */
 }
