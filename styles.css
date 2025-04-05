@@ -795,7 +795,16 @@ footer {
     .contact-bar a , .contact-bar {
         font-size: 0.7rem;
     }
+
+    .author {
+        bottom: 222px;
+    }
     
+}
+.author {
+    position: absolute;
+    bottom: 0px;
+    left: 10px;
 }
 
 .team-header {
@@ -806,6 +815,7 @@ footer {
     text-align: center;
     margin-top: 20px; /* Add spacing above the section */
     font-size: 48px; /* Increase font size for emphasis */
+    margin-bottom: 0px; /* Add spacing below the section */
 }
 
 .team-header::after {
@@ -816,4 +826,9 @@ footer {
     background-color: #008888; /* Match the text color */
     margin: 10px auto 0; /* Center the underline and add spacing */
     border-radius: 2px; /* Round the edges of the underline */
+}
+
+
+.header-partners {
+    margin-top: 110px;
 }
